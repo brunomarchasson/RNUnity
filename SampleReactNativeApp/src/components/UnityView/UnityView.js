@@ -24,38 +24,10 @@ export const UnityView = ({children , ...props} ) =>  {
     //     UnityModule.removeMessageListener(this.handle);
     // }
 
-    // /**
-    //  * [Deprecated] Use `UnityModule.pause` instead.
-    //  */
-    // public pause() {
-    //     UnityModule.pause();
-    // };
-
-    // /**
-    //  * [Deprecated] Use `UnityModule.resume` instead.
-    //  */
-    // public resume() {
-    //     UnityModule.resume();
-    // };
-
-    // /**
-    //  * [Deprecated] Use `UnityModule.postMessage` instead.
-    //  */
-    // public postMessage(gameObject: string, methodName: string, message: string) {
-    //     UnityModule.postMessage(gameObject, methodName, message);
-    // };
-
-    // /**
-    //  * [Deprecated] Use `UnityModule.postMessageToUnityManager` instead.
-    //  */
-    // public postMessageToUnityManager(message: string | UnityViewMessage) {
-    //     UnityModule.postMessageToUnityManager(message);
-    // };
 
     // public render() {
         // const { onUnityMessage, onMessage, ...props } = this.props;
-
-        console.log(NativeUnityView)
+      console.log('rr', NativeUnityView)
         return (
             <View {...props}>
                 <NativeUnityView
@@ -69,5 +41,5 @@ export const UnityView = ({children , ...props} ) =>  {
         );
     // }
 }
-
 const NativeUnityView = requireNativeComponent('UnityView', UnityView);
+export default UnityView;

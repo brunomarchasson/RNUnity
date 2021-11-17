@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
 import { Button, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 import {
   Header,
 } from 'react-native/Libraries/NewAppScreen';
-import { UnityView } from './components/UnityView/UnityView';
+import  UnityView, { MessageHandler, UnityModule }  from './components/UnityView';
+import Slider from '@react-native-community/slider';
 
 function Home(props) {
+
+  const handleChange = (key) => value => {
+    console.log('send', key, value)
+    UnityModule.postMessage(
+    'GameObject/Cube',
+    key,
+    `${value}`);
+  }
+
+  console.log('home', UnityView)
   return (
     <View style = {styles.container} >
         <Header />
@@ -15,7 +26,42 @@ function Home(props) {
           Welcome to React Native!
         </Text>
         <View style={styles.commandPanel}>
+        <View>
+        <Text style={styles.text}>
+          X
+        </Text>
+        <Slider
+  minimumValue={0}
+  step={1}
+  maximumValue={10}
+  onValueChange = {handleChange('setXRotation')}
+/>
+        </View>
 
+        <View>
+        <Text style={styles.text}>
+          Y
+        </Text>
+        <Slider
+  minimumValue={0}
+  maximumValue={10}
+  step={1}
+  onValueChange = {handleChange('setYRotation')}
+
+/>
+        </View>
+        <View>
+        <Text style={styles.text}>
+          Z
+        </Text>
+        <Slider
+  minimumValue={0}
+  maximumValue={10}
+  step={1}
+
+  onValueChange = {handleChange('setZRotation')}
+/>
+        </View>
         </View>
         </UnityView>
     </View>
@@ -38,10 +84,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
   },
   commandPanel: {
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     //width: 200,
     height: 200,
     //flex: 1,
+  },
+  text: {
+    fontSize: 20,
+    textAlign: 'center',
   },
   welcome: {
     fontSize: 20,
