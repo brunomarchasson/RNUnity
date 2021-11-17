@@ -1,6 +1,6 @@
 const UnityContainerView = requireNativeComponent("UnityContainerView", null);
 
-class ArPage extends React.Component {
+export class UnityView extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: "red" }}>

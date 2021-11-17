@@ -1,3 +1,3 @@
 import { AppRegistry } from "react-native";
-import AppRoot from "./scripts/react/root";
+import AppRoot from "./App";
 AppRegistry.registerComponent("protoreactnative", () => AppRoot);

@@ -1,4 +1,4 @@
-import UnityView from "@asmadsen/react-native-unity-view";
+import { UnityView } from "./UnityView";
 
 class App extends React.Component {
   render() {
