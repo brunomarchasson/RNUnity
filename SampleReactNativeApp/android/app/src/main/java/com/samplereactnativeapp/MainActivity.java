@@ -10,19 +10,19 @@ import com.facebook.react.ReactActivity;
 import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends ReactActivity {
-  private UnityPlayer mUnityPlayer;
+//  private UnityPlayer mUnityPlayer;
+//
+//  public UnityPlayer getUnityPlayer() {
+//    return null;
+//  }
 
-  public UnityPlayer getUnityPlayer() {
-    return mUnityPlayer;
-  }
-
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
+//  @Override
+//  protected void onCreate(Bundle savedInstanceState) {
+//    super.onCreate(savedInstanceState);
 
     //getWindow().setFormat(PixelFormat.RGBX_8888); // <--- This makes xperia play happy
-    mUnityPlayer = new UnityPlayer(this);
-  }
+//    mUnityPlayer = new UnityPlayer(this);
+//  }
 //
 //  public void onDestroy() {
 //    super.onDestroy();

@@ -27,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
             packages.add(new CustomReactPackage());
+            packages.add(new UnityViewPackage());
           return packages;
         }
 
@@ -45,7 +46,7 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
-    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+//    initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
   /**

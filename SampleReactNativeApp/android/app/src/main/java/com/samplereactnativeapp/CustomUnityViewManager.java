@@ -27,7 +27,7 @@ public class CustomUnityViewManager extends SimpleViewManager<UnityPlayer> {
     @Override
     protected UnityPlayer createViewInstance(ThemedReactContext reactContext) {
         MainActivity activity = (MainActivity)reactContext.getCurrentActivity();
-        return activity.getUnityPlayer();
+        return null ;//activity.getUnityPlayer();
     }
 }
 
