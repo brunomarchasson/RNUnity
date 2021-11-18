@@ -1,5 +1,7 @@
 package com.samplereactnativeapp;
 
+import android.util.Log;
+
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -36,6 +38,7 @@ public class UnityNativeModule extends ReactContextBaseJavaModule implements Uni
 
     @ReactMethod
     public void postMessage(String gameObject, String methodName, String message) {
+        Log.i("UnityNativeModule", "post Message");
         UnityUtils.postMessage(gameObject, methodName, message);
     }
 

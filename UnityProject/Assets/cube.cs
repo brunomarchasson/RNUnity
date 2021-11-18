@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class cube : MonoBehaviour
 {
+    private int clickCount = 0;
     private int rotateX = 0;
     private int rotateY = 0;
     private int rotateZ = 0;
+
+    private static Color[] colors = { Color.white, Color.blue, Color.grey, Color.red, Color.black };
+    private int CurrentColorIndex = 0;
+
     // Use this for initialization
     void Awake()
     {
@@ -35,6 +42,24 @@ public class cube : MonoBehaviour
     {
         Debug.Log("setZRotation:" + val);
         rotateZ = int.Parse(val);
+    }
+
+    void OnMouseDown()
+    {
+        Debug.Log("click");
+        CurrentColorIndex = (CurrentColorIndex+1) % 5;
+        clickCount++;
+        GetComponent<Renderer>().material.color = colors[CurrentColorIndex];
+
+        UnityMessageManager.Instance.SendMessageToRN(new UnityMessage()
+        {
+            name = "click",
+            data = JObject.FromObject(new { colors = colors[CurrentColorIndex].ToString() , clickCount = clickCount }),
+            callBack = (data) =>
+            {
+                Debug.Log("onClickCallBack:" + data);
+            }
+        });
     }
 
     void onMessage(MessageHandler message)

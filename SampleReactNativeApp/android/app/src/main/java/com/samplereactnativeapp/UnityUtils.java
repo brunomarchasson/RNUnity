@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.os.Build;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
@@ -81,6 +82,7 @@ public class UnityUtils {
     }
 
     public static void postMessage(String gameObject, String methodName, String message) {
+        Log.i("UnityUtils", "post Message "+gameObject+"."+methodName);
         if (!_isUnityReady) {
             return;
         }

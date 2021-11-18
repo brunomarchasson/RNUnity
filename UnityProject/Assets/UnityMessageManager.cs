@@ -102,7 +102,7 @@ public class UnityMessageManager : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            using (AndroidJavaClass jc = new AndroidJavaClass("com.reactnative.unity.view.UnityUtils"))
+            using (AndroidJavaClass jc = new AndroidJavaClass("com.samplereactnativeapp.UnityUtils"))
             {
                 jc.CallStatic("onUnityMessage", message);
             }
@@ -135,6 +135,7 @@ public class UnityMessageManager : MonoBehaviour
 
     void onMessage(string message)
     {
+        Debug.Log("Manager onMessage");
         if (OnMessage != null)
         {
             OnMessage(message);
@@ -143,6 +144,7 @@ public class UnityMessageManager : MonoBehaviour
 
     void onRNMessage(string message)
     {
+        Debug.Log("Manager onRNMessage");
         if (message.StartsWith(MessagePrefix))
         {
             message = message.Replace(MessagePrefix, "");

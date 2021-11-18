@@ -7,8 +7,23 @@ import { UnityModule, UnityViewMessage } from "./UnityModule";
 
 const { UIManager } = NativeModules;
 
-export const UnityView = ({children , ...props} ) =>  {
-    
+export const UnityView = ({children ,onUnityMessage,    onMessage,  ...props} ) =>  {
+    const handle = React.useRef;
+
+    React.useEffect(() => {
+        handle.current = UnityModule.addMessageListener(message => {
+            console.log('handle')
+                    if (onUnityMessage && message instanceof MessageHandler) {
+                        onUnityMessage(message);
+                    }
+                    if (onMessage && typeof message === 'string') {
+                        onMessage(message);
+                    }
+                });
+        return () => {
+            UnityModule.removeMessageListener(this.handle.current);
+        }
+    }, [])
     // public componentWillMount() {
     //     this.handle = UnityModule.addMessageListener(message => {
     //         if (this.props.onUnityMessage && message instanceof MessageHandler) {

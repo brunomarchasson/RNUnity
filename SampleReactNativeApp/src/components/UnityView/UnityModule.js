@@ -1,5 +1,5 @@
 import { NativeModules, DeviceEventEmitter } from 'react-native';
-import MessageHandler, { UnityMessagePrefix } from "./MessageHandler";
+import MessageHandler, { deserialize, isUnityMessage, UnityMessagePrefix } from "./MessageHandler";
 
 const { UnityNativeModule } = NativeModules;
 
@@ -12,8 +12,8 @@ function generateId() {
 
 
 function handleMessage(message) {
-    if (MessageHandler.isUnityMessage(message)) {
-        const handler = MessageHandler.deserialize(message);
+    if (isUnityMessage(message)) {
+        const handler = deserialize(message);
         if (handler.seq === 'end') {
             // handle callback message
             const m = waitCallbackMessageMap[handler.id];
