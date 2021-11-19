@@ -46,38 +46,35 @@ public class UnityUtils {
             callback.onReady();
             return;
         }
-        activity.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                activity.getWindow().setFormat(PixelFormat.RGBA_8888);
-                int flag = activity.getWindow().getAttributes().flags;
-                boolean fullScreen = false;
-                if((flag & WindowManager.LayoutParams.FLAG_FULLSCREEN) == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
-                    fullScreen = true;
-                }
-
-                unityPlayer = new UnityPlayer(activity);
-
-                try {
-                    // wait a moument. fix unity cannot start when startup.
-                    Thread.sleep( 1000 );
-                } catch (Exception e) {
-                }
-
-                // start unity
-                addUnityViewToBackground();
-                unityPlayer.windowFocusChanged(true);
-                unityPlayer.requestFocus();
-                unityPlayer.resume();
-
-                // restore window layout
-                if (!fullScreen) {
-                    activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-                    activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                }
-                _isUnityReady = true;
-                callback.onReady();
+        activity.runOnUiThread(() -> {
+            activity.getWindow().setFormat(PixelFormat.RGBA_8888);
+            int flag = activity.getWindow().getAttributes().flags;
+            boolean fullScreen = false;
+            if((flag & WindowManager.LayoutParams.FLAG_FULLSCREEN) == WindowManager.LayoutParams.FLAG_FULLSCREEN) {
+                fullScreen = true;
             }
+
+            unityPlayer = new UnityPlayer(activity);
+
+            try {
+                // wait a moument. fix unity cannot start when startup.
+                Thread.sleep( 1000 );
+            } catch (Exception e) {
+            }
+
+            // start unity
+            addUnityViewToBackground();
+            unityPlayer.windowFocusChanged(true);
+            unityPlayer.requestFocus();
+            unityPlayer.resume();
+
+            // restore window layout
+            if (!fullScreen) {
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+                activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+            _isUnityReady = true;
+            callback.onReady();
         });
     }
 
@@ -102,6 +99,8 @@ public class UnityUtils {
             _isUnityPaused = false;
         }
     }
+
+
 
     /**
      * Invoke by unity C#
@@ -130,9 +129,7 @@ public class UnityUtils {
         if (unityPlayer.getParent() != null) {
             ((ViewGroup)unityPlayer.getParent()).removeView(unityPlayer);
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            unityPlayer.setZ(-1f);
-        }
+        unityPlayer.setZ(-1f);
         final Activity activity = ((Activity)unityPlayer.getContext());
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(1, 1);
         activity.addContentView(unityPlayer, layoutParams);

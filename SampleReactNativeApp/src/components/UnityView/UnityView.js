@@ -8,10 +8,11 @@ import { UnityModule, UnityViewMessage } from "./UnityModule";
 const { UIManager } = NativeModules;
 
 export const UnityView = ({children ,onUnityMessage,    onMessage,  ...props} ) =>  {
-    const handle = React.useRef;
 
     React.useEffect(() => {
-        handle.current = UnityModule.addMessageListener(message => {
+        console.log('mount')
+
+            const handle = UnityModule.addMessageListener(message => {
             console.log('handle')
                     if (onUnityMessage && message instanceof MessageHandler) {
                         onUnityMessage(message);
@@ -21,34 +22,18 @@ export const UnityView = ({children ,onUnityMessage,    onMessage,  ...props} ) 
                     }
                 });
         return () => {
-            UnityModule.removeMessageListener(this.handle.current);
+            console.log('unmount')
+            if(handle) UnityModule.removeMessageListener(handle);
         }
     }, [])
-    // public componentWillMount() {
-    //     this.handle = UnityModule.addMessageListener(message => {
-    //         if (this.props.onUnityMessage && message instanceof MessageHandler) {
-    //             this.props.onUnityMessage(message);
-    //         }
-    //         if (this.props.onMessage && typeof message === 'string') {
-    //             this.props.onMessage(message);
-    //         }
-    //     });
-    // }
-
-    // public componentWillUnmount() {
-    //     UnityModule.removeMessageListener(this.handle);
-    // }
-
-
-    // public render() {
-        // const { onUnityMessage, onMessage, ...props } = this.props;
+    
       console.log('rr', NativeUnityView)
         return (
             <View {...props}>
                 <NativeUnityView
                     style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0 }}
-                    // onUnityMessage={onUnityMessage}
-                    // onMessage={onMessage}
+                    onUnityMessage={onUnityMessage}
+                    onMessage={onMessage}
                 >
                 </NativeUnityView>
                 {children}

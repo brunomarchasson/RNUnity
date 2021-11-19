@@ -25,13 +25,6 @@ export function deserialize (message) {
     return handler;
 }
 export default class MessageHandler {
-    
-
-    // public id: number;
-    // public seq: 'start' | 'end' | '';
-    // public name: string;
-    // public data: any;
-
     constructor() {
     }
 

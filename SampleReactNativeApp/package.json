@@ -7,13 +7,22 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "bundle:android": "cd android && ./gradlew clean && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@react-native-community/slider": "^4.1.12",
+    "@react-navigation/core": "^6.1.0",
+    "@react-navigation/drawer": "^6.1.8",
+    "@react-navigation/native": "^6.0.6",
     "eslint-plugin-flowtype": "^8.0.3",
     "react": "17.0.2",
-    "react-native": "0.66.3"
+    "react-native": "0.66.3",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.2.4",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

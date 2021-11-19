@@ -5,11 +5,14 @@ import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-
 import com.facebook.react.ReactActivity;
 import com.unity3d.player.UnityPlayer;
 
 public class MainActivity extends ReactActivity {
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 //  private UnityPlayer mUnityPlayer;
 //
 //  public UnityPlayer getUnityPlayer() {

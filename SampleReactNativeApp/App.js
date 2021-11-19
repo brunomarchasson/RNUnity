@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
 import React from 'react';
 import {
@@ -13,12 +6,18 @@ import {
   StyleSheet,
   useColorScheme,
 } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import Home from './src/Home';
+import UnityScreen from './src/Screen/UnityScreen';
+import RNScreen from './src/Screen/RNScreen';
+import { createStackNavigator } from '@react-navigation/stack';
 
+// const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -31,10 +30,19 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-    <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-    <Home />
-    </SafeAreaView>
+    <NavigationContainer>
+    {/* <SafeAreaView style={backgroundStyle}> */}
+    <StatusBar  />
+    {/* <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="ReactNative" component={RNScreen} />
+        <Stack.Screen name="Unity" component={UnityScreen}/>
+      </Stack.Navigator> */}
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="ReactNative" component={RNScreen} />
+        <Drawer.Screen name="Unity" component={UnityScreen}/>
+      </Drawer.Navigator>
+    {/* </SafeAreaView> */}
+    </NavigationContainer>
   );
 };
 
