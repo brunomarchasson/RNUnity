@@ -82,7 +82,6 @@ public class UnityViewManager extends SimpleViewManager<UnityView> implements Li
     }
 
     private void restoreUnityUserState() {
-        // restore the unity player state
         if (UnityUtils.isUnityPaused()) {
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -92,7 +91,7 @@ public class UnityViewManager extends SimpleViewManager<UnityView> implements Li
                         UnityUtils.getPlayer().pause();
                     }
                 }
-            }, 300); //TODO: 300 is the right one?
+            }, 300);
         }
     }
 

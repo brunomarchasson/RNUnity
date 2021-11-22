@@ -15,6 +15,14 @@ public class MessageHandler
     public String name;
     private JToken data;
 
+    public MessageHandler(int id, string seq, string name, JToken data)
+    {
+        this.id = id;
+        this.seq = seq;
+        this.name = name;
+        this.data = data;
+    }
+
     public static MessageHandler Deserialize(string message)
     {
         JObject m = JObject.Parse(message);
@@ -32,15 +40,8 @@ public class MessageHandler
         return data.Value<T>();
     }
 
-    public MessageHandler(int id, string seq, string name, JToken data)
-    {
-        this.id = id;
-        this.seq = seq;
-        this.name = name;
-        this.data = data;
-    }
-
-    public void send(object data)
+  
+    public void reply(object data)
     {
         JObject o = JObject.FromObject(new
         {
@@ -164,7 +165,7 @@ public class UnityMessageManager : MonoBehaviour
                 waitCallbackMessageMap.Remove(handler.id);
                 if (m.callBack != null)
                 {
-                    m.callBack(handler.getData<object>()); // todo
+                    m.callBack(handler.getData<object>());
                 }
             }
             return;

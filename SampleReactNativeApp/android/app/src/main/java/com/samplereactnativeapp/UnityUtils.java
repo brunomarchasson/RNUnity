@@ -57,7 +57,7 @@ public class UnityUtils {
             unityPlayer = new UnityPlayer(activity);
 
             try {
-                // wait a moument. fix unity cannot start when startup.
+                // wait a moment. fix unity cannot start when startup.
                 Thread.sleep( 1000 );
             } catch (Exception e) {
             }
@@ -99,8 +99,6 @@ public class UnityUtils {
             _isUnityPaused = false;
         }
     }
-
-
 
     /**
      * Invoke by unity C#

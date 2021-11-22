@@ -51,12 +51,14 @@ public class cube : MonoBehaviour
         clickCount++;
         GetComponent<Renderer>().material.color = colors[CurrentColorIndex];
 
-        UnityMessageManager.Instance.SendMessageToRN(new UnityMessage()
-        {
+        UnityMessageManager.Instance.SendMessageToRN(new UnityMessage(){
             name = "click",
-            data = JObject.FromObject(new { colors = colors[CurrentColorIndex].ToString() , clickCount = clickCount }),
-            callBack = (data) =>
-            {
+            data = JObject.FromObject(
+                new {
+                    colors = colors[CurrentColorIndex].ToString() ,
+                    clickCount = clickCount 
+            }),
+            callBack = (data) =>{
                 Debug.Log("onClickCallBack:" + data);
             }
         });
@@ -66,10 +68,7 @@ public class cube : MonoBehaviour
     {
         Debug.Log("onMessage");
         var data = message.getData<string>();
-        Debug.Log("onMessage:" + data);
-        Debug.Log(message);
-        // canRotate = !canRotate;
-        message.send(new { CallbackTest = "I am Unity callback" });
+        message.reply(new { CallbackTest = "I am Unity callback" });
     }
 
 

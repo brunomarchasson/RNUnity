@@ -31,7 +31,7 @@ function handleMessage(message) {
 }
 
 
-class UnityModuleImpl {
+class UnityModuleClass {
     constructor() {
         this.createListeners();
     }
@@ -84,45 +84,16 @@ class UnityModuleImpl {
         }
     }
 
-     postMessage(gameObject, methodName, message) {
+    postMessage(gameObject, methodName, message) {
         UnityNativeModule.postMessage(gameObject, methodName, message);
     }
-
-     pause() {
-        UnityNativeModule.pause();
-    }
-
-     resume() {
-        UnityNativeModule.resume();
-    }
-
-     addMessageListener(listener) {
+    
+    addMessageListener(listener) {
         const id = this.getHandleId();
         this.stringListeners[id] = listener;
         this.unityMessageListeners[id] = listener;
         return id;
-    }
-
-     addStringMessageListener(listener) {
-        const id = this.getHandleId();
-        this.stringListeners[id] = listener;
-        return id;
-    }
-
-     addUnityMessageListener(listener) {
-        const id = this.getHandleId();
-        this.unityMessageListeners[id] = listener;
-        return id;
-    }
-
-     removeMessageListener(handleId) {
-        if (this.unityMessageListeners[handleId]) {
-            delete this.unityMessageListeners[handleId];
-        }
-        if (this.stringListeners[handleId]) {
-            delete this.stringListeners[handleId];
-        }
     }
 }
 
-export const UnityModule = new UnityModuleImpl();
+export const unityModule = new UnityModuleClass();

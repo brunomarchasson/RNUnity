@@ -3,16 +3,14 @@ import { requireNativeComponent, ViewProperties, findNodeHandle, NativeModules, 
 import * as PropTypes from "prop-types";
 const { ViewPropTypes } = require('react-native');
 import MessageHandler from "./MessageHandler";
-import { UnityModule, UnityViewMessage } from "./UnityModule";
+import { unityModule } from "./UnityModule";
 
 const { UIManager } = NativeModules;
 
 export const UnityView = ({children ,onUnityMessage,    onMessage,  ...props} ) =>  {
 
     React.useEffect(() => {
-        console.log('mount')
-
-            const handle = UnityModule.addMessageListener(message => {
+            const handle = unityModule.addMessageListener(message => {
             console.log('handle')
                     if (onUnityMessage && message instanceof MessageHandler) {
                         onUnityMessage(message);
@@ -23,11 +21,11 @@ export const UnityView = ({children ,onUnityMessage,    onMessage,  ...props} ) 
                 });
         return () => {
             console.log('unmount')
-            if(handle) UnityModule.removeMessageListener(handle);
+            if(handle) unityModule.removeMessageListener(handle);
         }
     }, [])
     
-      console.log('rr', NativeUnityView)
+      console.log('rr', unityModule, NativeUnityView)
         return (
             <View {...props}>
                 <NativeUnityView

@@ -1,12 +1,11 @@
 import UnityView from "./UnityView";
-import { UnityModule, UnityViewMessage } from "./UnityModule";
+import { unityModule } from "./UnityModule";
 import MessageHandler from "./MessageHandler";
 
 export default UnityView;
 
 export {
     UnityView,
-    UnityModule,
+    unityModule,
     MessageHandler,
-    UnityViewMessage
 };

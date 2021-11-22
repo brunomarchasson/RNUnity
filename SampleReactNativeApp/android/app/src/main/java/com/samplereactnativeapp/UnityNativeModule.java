@@ -38,8 +38,14 @@ public class UnityNativeModule extends ReactContextBaseJavaModule implements Uni
 
     @ReactMethod
     public void postMessage(String gameObject, String methodName, String message) {
-        Log.i("UnityNativeModule", "post Message");
+        //Log.i("UnityNativeModule", "post Message");
         UnityUtils.postMessage(gameObject, methodName, message);
+    }
+
+    @Override
+    public void onMessage(String message) {
+        ReactContext context = getReactApplicationContext();
+        context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onUnityMessage", message);
     }
 
     @ReactMethod
@@ -52,9 +58,5 @@ public class UnityNativeModule extends ReactContextBaseJavaModule implements Uni
         UnityUtils.resume();
     }
 
-    @Override
-    public void onMessage(String message) {
-        ReactContext context = getReactApplicationContext();
-        context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onUnityMessage", message);
-    }
+
 }

@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import {
-  Button,
-  SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 import UnityView, {
-  MessageHandler,
-  UnityModule,
+  unityModule,
 } from '../components/UnityView';
 import Slider from '@react-native-community/slider';
 
@@ -18,13 +13,12 @@ function UnityScreen(props) {
   const [lastUnityMessage, setLastUnityMessage] = useState();
   const handleChange = key => value => {
     console.log('send', key, value);
-    UnityModule.postMessage('Cube', key, `${value}`);
+    unityModule.postMessage('Cube', key, `${value}`);
   };
 
   const onUnityMessage = hander => {
     console.log('onUnityMessage', hander);
     setLastUnityMessage(JSON.stringify(hander, null, 2));
-    // this.setState({ clickCount: this.state.clickCount + 1 });
     setTimeout(() => {
       hander.send('I am click callback!');
     }, 2000);
@@ -79,26 +73,20 @@ UnityScreen.propTypes = {};
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
     position: 'absolute',
-    //zIndex: 99,
     top: 0,
     bottom: 0,
     left: 0,
     right: 0,
     display: 'flex',
-    //justifyContent: 'center',
-    //alignItems: 'center',
     backgroundColor: 'red',
   },
   commandPanel: {
     backgroundColor: 'rgba(52, 52, 52, 0.8)',
-    //width: 200,
     height: 300,
     padding: 10,
     margin: 10,
     borderRadius: 4,
-    //flex: 1,
   },
   text: {
     fontSize: 20,

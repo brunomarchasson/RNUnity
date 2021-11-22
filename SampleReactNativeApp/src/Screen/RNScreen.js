@@ -1,20 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
-  Colors,
-  DebugInstructions,
   Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Button,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
