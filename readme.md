@@ -184,3 +184,4 @@ UnityMessageManager.Instance.SendMessageToRN(new UnityMessage(){
 - https://medium.com/@beaulieufrancois/part-2-show-unity3d-view-in-react-native-application-138219323cbc
 - https://medium.com/codeexplorers/connecting-the-dots-between-react-native-and-unity-3d-using-gradle-67f93b92c254
 - https://github.com/f111fei/react-native-unity-view
+- https://github.com/Unity-Technologies/uaal-example
