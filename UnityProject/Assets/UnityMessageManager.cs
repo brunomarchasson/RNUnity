@@ -63,10 +63,10 @@ public class UnityMessage
 
 public class UnityMessageManager : MonoBehaviour
 {
-#if UNITY_IOS && !UNITY_EDITOR
-    [DllImport("__Internal")]
-    private static extern void onUnityMessage(string message);
-#endif
+//#if UNITY_IOS && !UNITY_EDITOR
+//    [DllImport("__Internal")]
+//    private static extern void onUnityMessage(string message);
+//#endif
 
     public const string MessagePrefix = "@UnityMessage@";
 
@@ -110,9 +110,9 @@ public class UnityMessageManager : MonoBehaviour
         }
         else if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-#if UNITY_IOS && !UNITY_EDITOR
-            onUnityMessage(message);
-#endif
+//#if UNITY_IOS && !UNITY_EDITOR
+//            onUnityMessage(message);
+//#endif
         }
     }
 
