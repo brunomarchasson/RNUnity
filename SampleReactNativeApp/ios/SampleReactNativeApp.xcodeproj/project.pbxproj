@@ -15,6 +15,13 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8FCACE732756854100325E18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCACE722756854100325E18 /* UIKit.framework */; };
 		8FCACE8327576EBE00325E18 /* UnityFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FCACE7B275686A700325E18 /* UnityFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FCACEA22757C7CD00325E18 /* RNUnityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCACE982757C7CC00325E18 /* RNUnityView.m */; };
+		8FCACEA32757C7CD00325E18 /* RNUnity.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 8FCACE9A2757C7CC00325E18 /* RNUnity.xcworkspace */; };
+		8FCACEA42757C7CD00325E18 /* RNUnityViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCACE9C2757C7CC00325E18 /* RNUnityViewManager.m */; };
+		8FCACEA52757C7CD00325E18 /* RUUnity.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 8FCACE9F2757C7CC00325E18 /* RUUnity.xcworkspace */; };
+		8FCACEA62757C7CD00325E18 /* UnityUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8FCACEA02757C7CC00325E18 /* UnityUtils.mm */; };
+		8FCACEA72757C7CD00325E18 /* UnityNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCACEA12757C7CD00325E18 /* UnityNativeModule.m */; };
+		8FCACEAC2757D0D600325E18 /* UnityViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCACEAB2757D0D500325E18 /* UnityViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,18 @@
 		8FCACE742756858400325E18 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCACE772756864000325E18 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FCACE7B275686A700325E18 /* UnityFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UnityFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FCACE982757C7CC00325E18 /* RNUnityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUnityView.m; sourceTree = "<group>"; };
+		8FCACE992757C7CC00325E18 /* RNUnityViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUnityViewManager.h; sourceTree = "<group>"; };
+		8FCACE9A2757C7CC00325E18 /* RNUnity.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RNUnity.xcworkspace; sourceTree = "<group>"; };
+		8FCACE9B2757C7CC00325E18 /* RNUnityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUnityView.h; sourceTree = "<group>"; };
+		8FCACE9C2757C7CC00325E18 /* RNUnityViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUnityViewManager.m; sourceTree = "<group>"; };
+		8FCACE9D2757C7CC00325E18 /* UnityNativeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityNativeModule.h; sourceTree = "<group>"; };
+		8FCACE9E2757C7CC00325E18 /* UnityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityUtils.h; sourceTree = "<group>"; };
+		8FCACE9F2757C7CC00325E18 /* RUUnity.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RUUnity.xcworkspace; sourceTree = "<group>"; };
+		8FCACEA02757C7CC00325E18 /* UnityUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = UnityUtils.mm; sourceTree = "<group>"; };
+		8FCACEA12757C7CD00325E18 /* UnityNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnityNativeModule.m; sourceTree = "<group>"; };
+		8FCACEA82757D0A300325E18 /* SampleReactNativeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleReactNativeApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FCACEAB2757D0D500325E18 /* UnityViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnityViewManager.m; sourceTree = "<group>"; };
 		9BA3E77F4DDC2211DC2EE836 /* Pods-SampleReactNativeApp-SampleReactNativeAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleReactNativeApp-SampleReactNativeAppTests.release.xcconfig"; path = "Target Support Files/Pods-SampleReactNativeApp-SampleReactNativeAppTests/Pods-SampleReactNativeApp-SampleReactNativeAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E5778C290B01198D1821E173 /* libPods-SampleReactNativeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleReactNativeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -154,12 +173,24 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8FCACEAB2757D0D500325E18 /* UnityViewManager.m */,
+				8FCACE9A2757C7CC00325E18 /* RNUnity.xcworkspace */,
+				8FCACE9B2757C7CC00325E18 /* RNUnityView.h */,
+				8FCACE982757C7CC00325E18 /* RNUnityView.m */,
+				8FCACE992757C7CC00325E18 /* RNUnityViewManager.h */,
+				8FCACE9C2757C7CC00325E18 /* RNUnityViewManager.m */,
+				8FCACE9F2757C7CC00325E18 /* RUUnity.xcworkspace */,
+				8FCACE9D2757C7CC00325E18 /* UnityNativeModule.h */,
+				8FCACEA12757C7CD00325E18 /* UnityNativeModule.m */,
+				8FCACE9E2757C7CC00325E18 /* UnityUtils.h */,
+				8FCACEA02757C7CC00325E18 /* UnityUtils.mm */,
 				13B07FAE1A68108700A75B9A /* SampleReactNativeApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SampleReactNativeAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				2363D7D1635BD2A281E7485D /* Pods */,
+				8FCACEA82757D0A300325E18 /* SampleReactNativeApp-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -235,7 +266,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -271,7 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				8FCACEA32757C7CD00325E18 /* RNUnity.xcworkspace in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8FCACEA52757C7CD00325E18 /* RUUnity.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +472,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				8FCACEA62757C7CD00325E18 /* UnityUtils.mm in Sources */,
+				8FCACEA22757C7CD00325E18 /* RNUnityView.m in Sources */,
+				8FCACEA42757C7CD00325E18 /* RNUnityViewManager.m in Sources */,
+				8FCACEA72757C7CD00325E18 /* UnityNativeModule.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8FCACEAC2757D0D600325E18 /* UnityViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +496,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CFCC07A04D91B298A5C712A /* Pods-SampleReactNativeApp-SampleReactNativeAppTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -486,7 +523,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9BA3E77F4DDC2211DC2EE836 /* Pods-SampleReactNativeApp-SampleReactNativeAppTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = SampleReactNativeAppTests/Info.plist;
@@ -516,6 +552,61 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 43H82EUAWV;
 				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../UnityProject/iosBuild/Classes\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Fmt\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-callinvoker\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/React-logger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-perflogger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-runtimeexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/fmt\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/libevent\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-slider\"",
+					"\"$(PODS_ROOT)/DoubleConversion\"",
+					"\"$(PODS_ROOT)/boost\"",
+					"\"$(PODS_ROOT)/boost\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/glog\"",
+					"\"$(PODS_ROOT)/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/React-hermes\"",
+					"\"${PODS_ROOT}/Headers/Public/hermes-engine\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_TARGET_SRCROOT)/include/\"",
+					"\"$(SRCROOT)/../../UnityProject/iosBuild/Classes/Unity\"",
+					/Users/pierre/Documents/RNUnity/UnityProject/iosBuild/Classes/Unity,
+					/Users/pierre/Documents/RNUnity/UnityProject/iosBuild/Librairies,
+				);
 				INFOPLIST_FILE = SampleReactNativeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -529,6 +620,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SampleReactNativeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleReactNativeApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -543,6 +635,61 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 43H82EUAWV;
+				GCC_PREFIX_HEADER = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../../UnityProject/iosBuild/Classes\"",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Fmt\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-callinvoker\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/React-logger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-perflogger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-runtimeexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/fmt\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/libevent\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-slider\"",
+					"\"$(PODS_ROOT)/DoubleConversion\"",
+					"\"$(PODS_ROOT)/boost\"",
+					"\"$(PODS_ROOT)/boost\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/glog\"",
+					"\"$(PODS_ROOT)/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/React-hermes\"",
+					"\"${PODS_ROOT}/Headers/Public/hermes-engine\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_TARGET_SRCROOT)/include/\"",
+					"\"$(SRCROOT)/../../UnityProject/iosBuild/Classes/Unity\"",
+					/Users/pierre/Documents/RNUnity/UnityProject/iosBuild/Classes/Unity,
+					/Users/pierre/Documents/RNUnity/UnityProject/iosBuild/Librairies,
+				);
 				INFOPLIST_FILE = SampleReactNativeApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -556,6 +703,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SampleReactNativeApp;
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleReactNativeApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
